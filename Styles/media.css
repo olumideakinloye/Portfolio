@@ -1,0 +1,24 @@
+@media (min-width: 600px) {
+    .hero .info {
+        width: 40%;
+    }
+}
+
+@media (max-width: 600px) {
+    .side-by-side {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    #skills {
+        width: auto;
+    }
+
+    #PFP {
+        left: -30%;
+    }
+
+    #goals {
+        width: auto;
+    }
+}

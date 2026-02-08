@@ -1,0 +1,286 @@
+* {
+    border: none;
+    padding: 0;
+    line-height: 1;
+    margin: 0;
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.federo-regular {
+    font-family: "Federo", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+body {
+    min-height: 100vh;
+    position: relative;
+}
+
+body {
+    background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+h2 {
+    font-size: 1.8rem
+}
+
+p {
+    font-size: 1rem;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* height: max-content; */
+    /* backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px); */
+    z-index: 5;
+
+}
+
+header {
+    position: fixed;
+    top: -1rem;
+    left: -5%;
+    width: 110%;
+    z-index: 10;
+}
+
+header nav {
+    width: 80%;
+    padding: 2rem 10% 1rem 10%;
+    backdrop-filter: blur(10px);
+    color: white;
+    background-color: rgba(255, 255, 255, 0.068);
+    display: flex;
+    -webkit-backdrop-filter: blur(10px);
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.479), inset 0 -1px 5px rgba(255, 255, 255, 0.322);
+}
+
+header nav ul {
+    display: flex;
+    gap: 3dvw;
+    list-style-type: none;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: clamp(0.6rem, calc(0.6rem + 1dvw), 0.95rem);
+    font-weight: 900;
+    transition: color 0.2s;
+}
+
+header nav ul li:hover a {
+    color: turquoise;
+}
+
+header h1 span {
+    color: turquoise;
+}
+
+.hero {
+    height: 100dvh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.hero .info {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    color: white;
+    gap: 3rem;
+    padding: 0 5% 0 5%;
+    margin-right: -2%;
+    max-width: 70%;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.068);
+    height: 80%;
+    border-radius: 50% 0 0 50%;
+    margin-top: 4.5rem;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.479), inset 0 0 5px rgba(255, 255, 255, 0.322);
+}
+
+.glass::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(120deg,
+            rgba(255, 255, 255, 0.35),
+            transparent 40%);
+    pointer-events: none;
+}
+
+.hero .info h2 {
+    font-size: clamp(2rem, calc(2.5rem + 2dvw), 8rem);
+    text-align: center;
+    width: auto;
+    overflow: hidden;
+    height: 25%;
+}
+
+.cursor {
+    display: inline-block;
+    margin-left: 2px;
+    color: turquoise;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+.hero .info p {
+    color: rgb(116, 116, 116);
+    text-align: end;
+    font-size: clamp(1rem, (1rem + 0.5dvw), 3rem);
+}
+
+#PFP {
+    width: 30%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    /* opacity: 0.7; */
+}
+
+
+@keyframes typing {
+    to {
+        width: 21ch;
+    }
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* #about {
+    height: 80vh;
+    width: 90%;
+    padding: 10vh 5%;
+    background-image: url(../IMGs/download.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#about h2 {
+    color: turquoise;
+    font-size: 1.8rem;
+}
+
+#about p {
+    color: white;
+    line-height: normal;
+}
+
+.side-by-side {
+    display: flex;
+    gap: 5dvw;
+}
+
+#skills {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 45%;
+}
+
+#skills h2 {
+    color: turquoise;
+    font-size: 1.8rem;
+    line-height: normal;
+}
+
+#skills ul {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding-left: 1rem;
+}
+
+#skills ul li::marker {
+    color: turquoise;
+}
+
+#goals {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 45%;
+}
+
+#goals h2 {
+    color: turquoise;
+    font-size: 1.8rem;
+    line-height: normal;
+}
+
+#goals p {
+    color: white;
+    line-height: normal;
+}
+
+#contact {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+#contact h2 {
+    color: turquoise;
+    font-size: 1.8rem;
+    line-height: normal;
+}
+
+#contact p {
+    color: white;
+    line-height: normal;
+}
+
+#contact p a {
+    color: turquoise;
+}
+
+footer {
+    padding: 2rem 0;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.288);
+    display: flex;
+    -webkit-backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+} */

@@ -74,10 +74,7 @@
 body {
     min-height: 100vh;
     position: relative;
-}
-
-body {
-    background: linear-gradient(135deg, #0f172a, #1e293b);
+    background-color: black;
 }
 
 h2 {
@@ -95,11 +92,7 @@ body .content {
     left: 0;
     right: 0;
     bottom: 0;
-    /* height: max-content; */
-    /* backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px); */
     z-index: 5;
-
 }
 
 header {
@@ -143,7 +136,7 @@ header h1 span {
 }
 
 .hero {
-    height: 100dvh;
+    height: 100vh;
     width: 100%;
     position: relative;
     display: flex;
@@ -156,16 +149,14 @@ header h1 span {
     display: flex;
     flex-direction: column;
     align-items: end;
-    justify-content: center;
+    justify-content: space-evenly;
     color: white;
-    gap: 3rem;
-    padding: 0 5% 0 5%;
+    padding: 5% 5%;
     margin-right: -2%;
-    max-width: 70%;
-    height: 80%;
     border-radius: 50% 0 0 50%;
     margin-top: 4.5rem;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.479), inset 0 0 5px rgba(255, 255, 255, 0.322);
+    z-index: 2;
 }
 
 .info-content {
@@ -174,10 +165,9 @@ header h1 span {
 }
 
 .hero .info h2 {
-    font-size: clamp(2rem, calc(2.5rem + 2dvw), 8rem);
+    font-size: clamp(1.7rem, calc(2.5rem + 2dvw), 8rem);
     text-align: center;
     width: auto;
-    overflow: hidden;
     height: 25%;
 }
 
@@ -204,14 +194,14 @@ header h1 span {
 .hero .info p {
     color: rgb(177, 177, 177);
     text-align: end;
-    font-size: clamp(1rem, (1rem + 0.5dvw), 3rem);
+    font-size: clamp(0.7rem, (1rem + 0.5dvw), 3rem);
 }
 
 #PFP {
-    width: 30%;
+    height: 90%;
     position: absolute;
     bottom: 0;
-    left: 0;
+    left: -120px;
     z-index: 1;
 }
 

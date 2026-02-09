@@ -1,24 +1,73 @@
-@media (min-width: 600px) {
+/* Phones */
+@media (max-width: 640px) {
+    .hero {
+        align-items: end;
+    }
+
     .hero .info {
-        width: 40%;
+        max-width: 75%;
+        height: 45%;
+        margin-bottom: 1rem;
+        padding: 5% 5% 5% 10%;
+    }
+
+    .hero .info h2 {
+        height: 40%;
+    }
+
+    body .background {
+        background-position: bottom;
     }
 }
 
-@media (max-width: 600px) {
-    .side-by-side {
-        flex-direction: column;
-        gap: 2rem;
+@media screen and (max-width: 640px) and (max-height: 700px) {
+    .hero .info {
+        height: 55%;
+        max-width: 75%;
+        padding: 5% 5% 5% 15%;
+
     }
 
-    #skills {
-        width: auto;
+}
+
+@media (min-width: 640px) {
+    .hero .info {
+        max-width: 70%;
+        height: 45%;
+    }
+
+    body .background {
+        background-position: right;
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) {
+    .hero .info {
+        max-width: 50%;
+        height: 55%;
+    }
+}
+
+/* Small laptops */
+@media (min-width: 1024px) {
+    .hero .info {
+        max-width: 50%;
+        height: 60%;
     }
 
     #PFP {
-        left: -30%;
+        left: 0;
     }
+}
 
-    #goals {
-        width: auto;
+/* Desktops */
+@media (min-width: 1280px) {}
+
+/* Large screens */
+@media (min-width: 1536px) {
+    .hero .info {
+        max-width: 50%;
+        height: 60%;
     }
 }

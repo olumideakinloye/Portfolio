@@ -2,97 +2,62 @@ body .background {
     height: 100%;
     width: 100%;
     position: fixed;
+    flex-direction: column;
     z-index: 1;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-image: url(../IMGs/BG.jpg);
+    background-image: url(../IMGs/BG2.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    /* gap: 5rem; */
-    /* animation: rotate 20s infinite ease-in-out;
-    animation-direction: alternate-reverse; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 20px;
+    width: 100%;
 }
 
 body .background .bubble {
-    position: relative;
     width: 15rem;
     height: 15rem;
-    /* background-color: rgba(0, 0, 0, 0.082); */
-    /* box-shadow: 0 0 100px 1px rgba(64, 224, 208, 0.62), inset 0 0 50px rgba(64, 224, 208, 0.62); */
     border-radius: 50%;
     animation: blobMorph 20s infinite ease-in-out, blobFloat 22s infinite ease-in-out;
-    z-index: 3;
+    z-index: 5;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
 
-body .background .bubble::after {
-    content: '';
-    position: absolute;
-    bottom: -200%;
-    left: 100%;
-    width: 15rem;
-    height: 15rem;
-    /* background-color: rgba(0, 0, 0, 0.082); */
-    /* box-shadow: 0 0 100px 1px rgba(64, 224, 208, 0.62), inset 0 0 50px rgba(64, 224, 208, 0.62); */
-    border-radius: 50%;
-    animation: blobMorph 20s infinite ease-in-out, blobFloat 22s infinite ease-in-out;
-    animation-delay: 1s;
-    z-index: 2;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
+body .background .bubble:nth-child(1) {
+    grid-column: 1;
 }
 
-body .background .bubble::before {
-    content: '';
-    position: absolute;
-    top: -200%;
-    right: 100%;
-    width: 15rem;
-    height: 15rem;
-    /* background-color: rgba(0, 0, 0, 0.082); */
-    /* box-shadow: 0 0 100px 1px rgba(64, 224, 208, 0.62), inset 0 0 50px rgba(64, 224, 208, 0.62); */
-    border-radius: 50%;
-    animation: blobMorph 20s infinite ease-in-out, blobFloat 22s infinite ease-in-out;
-    animation-delay: 4s;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-
-}
-
-body .background .bubble2 {
+/* Top Right */
+body .background .bubble:nth-child(2) {
+    grid-column: 3;
     animation-delay: 6s;
 }
 
-body .background .bubble2::after {
-    right: 100%;
-    left: 0;
-    animation-delay: 0s;
+/* Center */
+body .background .center {
+    grid-column: 2;
+    animation-delay: 4s;
 }
 
-body .background .bubble2::before {
-    right: 0;
-    left: 100%;
-    animation-delay: 0s;
+/* Bottom Left */
+body .background .bubble:nth-child(4) {
+    grid-column: 1;
+    animation-delay: 8s;
+}
+
+/* Bottom Right */
+body .background .bubble:nth-child(5) {
+    grid-column: 3;
+}
+
+body .background .bubble2 {
+    animation-delay: 2s;
 }
 
 body .background .bubble3 {
-    animation-delay: 0s;
-}
-
-body .background .bubble3::after {
-    right: 0;
-    left: 0;
-    animation-delay: 4s;
-}
-
-body .background .bubble3::before {
-    right: 0;
-    left: 0;
-    animation-delay: 4s;
+    animation-delay: 12s;
 }
 
 @keyframes blobMorph {

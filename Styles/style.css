@@ -23,6 +23,54 @@
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
+.glass::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(120deg,
+            rgba(255, 255, 255, 0.35),
+            transparent 40%);
+    pointer-events: none;
+}
+
+.dark-glass {
+    background: linear-gradient(135deg,
+            rgba(20, 20, 25, 0.65),
+            rgba(10, 10, 15, 0.35));
+    backdrop-filter: blur(16px) saturate(130%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.65),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.6);
+}
+
+.purple-glass {
+    background: linear-gradient(135deg,
+            rgba(120, 60, 255, 0.35),
+            rgba(40, 10, 90, 0.25));
+
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+
+    border: 1px solid rgba(180, 120, 255, 0.35);
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 40px rgba(120, 40, 255, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+
+    box-shadow:
+        0 0 15px #8b3cff,
+        0 0 40px rgba(139, 60, 255, 0.6);
+
+    color: white;
+}
+
+
+
 body {
     min-height: 100vh;
     position: relative;
@@ -91,7 +139,7 @@ header nav ul li:hover a {
 }
 
 header h1 span {
-    color: turquoise;
+    color: #C084FF;
 }
 
 .hero {
@@ -114,24 +162,15 @@ header h1 span {
     padding: 0 5% 0 5%;
     margin-right: -2%;
     max-width: 70%;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.151);
     height: 80%;
     border-radius: 50% 0 0 50%;
     margin-top: 4.5rem;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.479), inset 0 0 5px rgba(255, 255, 255, 0.322);
 }
 
-.glass::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: linear-gradient(120deg,
-            rgba(255, 255, 255, 0.35),
-            transparent 40%);
-    pointer-events: none;
+.info-content {
+    filter: none;
+    z-index: 100;
 }
 
 .hero .info h2 {
@@ -145,7 +184,7 @@ header h1 span {
 .cursor {
     display: inline-block;
     margin-left: 2px;
-    color: turquoise;
+    color: #C084FF;
     animation: blink 0.7s infinite;
 }
 
@@ -163,7 +202,7 @@ header h1 span {
 }
 
 .hero .info p {
-    color: rgb(116, 116, 116);
+    color: rgb(177, 177, 177);
     text-align: end;
     font-size: clamp(1rem, (1rem + 0.5dvw), 3rem);
 }
@@ -174,7 +213,6 @@ header h1 span {
     bottom: 0;
     left: 0;
     z-index: 1;
-    /* opacity: 0.7; */
 }
 
 

@@ -18,10 +18,74 @@
   </head>
 
   <body>
+    <svg style="display: none">
+      <filter
+        id="real-glass"
+        filterUnits="objectBoundingBox"
+        x="0"
+        y="0"
+        width="1"
+        height="1"
+      >
+        <!-- 1. Create Noise Texture -->
+        <feTurbulence
+          type="fractalNoise"
+          baseFrequency="0.8"
+          numOctaves="3"
+          result="noise"
+        />
+
+        <!-- 2. Adjust Noise Contrast -->
+        <feColorMatrix
+          type="matrix"
+          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.5 0"
+          in="noise"
+          result="softNoise"
+        />
+
+        <!-- 3. Blur the Background (Standard Glass) -->
+        <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blurred" />
+
+        <!-- 4. Distort the Blurred Background using Noise (Refraction) -->
+        <feDisplacementMap
+          in="blurred"
+          in2="softNoise"
+          scale="20"
+          xChannelSelector="R"
+          yChannelSelector="G"
+          result="refracted"
+        />
+
+        <!-- 5. Add Lighting -->
+        <feSpecularLighting
+          in="softNoise"
+          surfaceScale="5"
+          specularConstant="0.75"
+          specularExponent="20"
+          lighting-color="#ffffff"
+          result="light"
+        >
+          <fePointLight x="-5000" y="-10000" z="20000" />
+        </feSpecularLighting>
+
+        <!-- 6. Composite Light + Refracted Image -->
+        <feComposite
+          in="light"
+          in2="refracted"
+          operator="arithmetic"
+          k1="0"
+          k2="1"
+          k3="1"
+          k4="0"
+        />
+      </filter>
+    </svg>
     <div class="background">
-      <div class="bubble"></div>
-      <div class="bubble bubble2"></div>
-      <div class="bubble bubble3"></div>
+      <div class="bubble purple-glass"></div>
+      <div class="bubble purple-glass bubble2"></div>
+      <div class="bubble purple-glass bubble3 center"></div>
+      <div class="bubble purple-glass bubble4"></div>
+      <div class="bubble purple-glass bubble5"></div>
     </div>
     <div class="content">
       <header data-aos="fade-down">
@@ -36,15 +100,16 @@
         </nav>
       </header>
       <section class="hero">
-        <!-- <img
+        <img
           src="IMGs/myPicture.png"
           alt="My picture"
           id="PFP"
           data-aos="fade-right"
-        /> -->
+        />
         <div class="info glass" data-aos="fade-left">
           <h2 id="type-text">
-            <span id="text" class="federo-regular"></span><span class="cursor">|</span>
+            <span id="text" class="federo-regular"></span
+            ><span class="cursor">|</span>
           </h2>
           <p>
             A results-driven computer scientist focused on building scalable,
@@ -53,8 +118,7 @@
           </p>
         </div>
       </section>
-      <main>
-      </main>
+      <main></main>
       <footer>
         <p></p>
       </footer>

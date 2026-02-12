@@ -14,7 +14,7 @@ html {
 }
 
 :root {
-  color-scheme: light;
+    color-scheme: light;
 }
 
 
@@ -101,21 +101,12 @@ p {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-body .content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 5;
-}
-
 header {
     position: fixed;
     top: -1rem;
     left: -5%;
     width: 110%;
-    z-index: 10;
+    z-index: 50;
 }
 
 header nav {
@@ -171,12 +162,13 @@ header h1 span {
     border-radius: 50% 0 0 50%;
     margin-top: 4.5rem;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.479), inset 0 0 5px rgba(255, 255, 255, 0.322);
-    z-index: 2;
+    z-index: 5;
+    height: 60%;
 }
 
 .hero .info h2 {
     font-size: clamp(1.7rem, calc(2.5rem + 2dvw), 8rem);
-    text-align: center;
+    text-align: right;
     width: auto;
     height: 25%;
 }
@@ -186,6 +178,7 @@ header h1 span {
     margin-left: 2px;
     color: #C084FF;
     animation: blink 0.7s infinite;
+    padding: 0;
 }
 
 @keyframes blink {
@@ -228,103 +221,67 @@ main {
     flex-direction: column;
 }
 
-/* #about {
-    height: 80vh;
-    width: 90%;
-    padding: 10vh 5%;
-    background-image: url(../IMGs/download.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+#about {
+    height: 100vh;
+    /* height: auto; */
+    color: #C084FF;
+    position: relative;
 }
 
-#about h2 {
-    color: turquoise;
-    font-size: 1.8rem;
+.about-BG {
+    position: absolute;
+    z-index: 1;
+    /* height: 100%;
+    width: 100%; */
+    background: radial-gradient(circle at top left, #6a00ff33, transparent 60%),
+        radial-gradient(circle at bottom right, #b100ff44, transparent 60%),
+        #05000a;
+    top: 0;
+    left: 0;
+    inset: 0;
 }
 
-#about p {
+.about-card {
+    border-radius: 20px;
+    padding: 40px;
     color: white;
-    line-height: normal;
 }
 
-.side-by-side {
-    display: flex;
-    gap: 5dvw;
-}
-
-#skills {
+.about-content {
+    z-index: 10;
     display: flex;
     flex-direction: column;
-    gap: 0.8rem;
-    width: 45%;
+    justify-content: space-around;
+    position: absolute;
+    min-height: 100%;
+    height: auto;
+    padding: 0 8%;
+    left: 0;
+    top: 0;
 }
-
-#skills h2 {
-    color: turquoise;
-    font-size: 1.8rem;
-    line-height: normal;
+.about-content p{
+    line-height: 1.5;
 }
-
-#skills ul {
-    color: white;
+.about-skill{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    aspect-ratio: 1/1;
+}
+.about-skill-card{
     display: flex;
     flex-direction: column;
-    gap: 0.6rem;
-    padding-left: 1rem;
-}
-
-#skills ul li::marker {
-    color: turquoise;
-}
-
-#goals {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-    width: 45%;
-}
-
-#goals h2 {
-    color: turquoise;
-    font-size: 1.8rem;
-    line-height: normal;
-}
-
-#goals p {
-    color: white;
-    line-height: normal;
-}
-
-#contact {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-}
-
-#contact h2 {
-    color: turquoise;
-    font-size: 1.8rem;
-    line-height: normal;
-}
-
-#contact p {
-    color: white;
-    line-height: normal;
-}
-
-#contact p a {
-    color: turquoise;
-}
-
-footer {
-    padding: 2rem 0;
-    width: 100%;
-    backdrop-filter: blur(10px);
-    color: white;
-    background-color: rgba(0, 0, 0, 0.288);
-    display: flex;
-    -webkit-backdrop-filter: blur(10px);
-    justify-content: center;
     align-items: center;
-} */
+    justify-content: space-evenly;
+    padding: 1rem;
+    width: 200px;
+    aspect-ratio: 1/1;
+    justify-self: center;
+    align-self: center;
+    border-radius: 20px;
+}
+.about-skill-card img{
+    width: 80px;
+}
+.about-skill-card h3{
+    text-align: center;
+}

@@ -37,6 +37,17 @@ function type() {
 
   setTimeout(type, isDeleting ? deletingSpeed : typingSpeed);
 }
+function adjustAboutSectionHeight(){
+  const aboutContent = document.getElementById("about-content");
+  const aboutSection = document.getElementById("about");
+  const aboutBG = document.getElementById("about-BG")
+  if(aboutContent.clientHeight > window.innerHeight){
+  aboutSection.style.height = `${aboutContent.clientHeight}px`;
+  aboutBG.style.height = `${aboutContent.clientHeight}px`;
+  }
+}
+window.addEventListener("resize", adjustAboutSectionHeight);
+adjustAboutSectionHeight();
 
 // Initial start delay
 setTimeout(type, 1000);

@@ -1,14 +1,18 @@
 /* Phones */
-@media (max-width: 640px) {
-    .hero {
-        align-items: end;
+@media (max-width: 605px) {
+    .about-content{
+        gap: 1rem;
+        padding: 1rem 8%;
     }
-
+        .about-skill{
+            gap: 1rem;
+        }
+}
+@media (max-width: 640px) {
     .hero .info {
         max-width: 75%;
-        height: 45%;
-        margin-bottom: 1rem;
         padding: 5% 5% 5% 10%;
+        height: 45%;
     }
 
     .hero .info h2 {
@@ -22,10 +26,9 @@
 
 @media screen and (max-width: 640px) and (max-height: 700px) {
     .hero .info {
-        height: 55%;
         max-width: 75%;
         padding: 5% 5% 5% 15%;
-
+        height: 55%;
     }
 
 }
@@ -50,6 +53,11 @@
 }
 
 /* Small laptops */
+@media (min-width: 890px) {
+    .about-skill{
+        aspect-ratio: 0;
+    }
+}
 @media (min-width: 1024px) {
     .hero .info {
         max-width: 50%;
@@ -59,6 +67,7 @@
     #PFP {
         left: 0;
     }
+    
 }
 
 /* Desktops */

@@ -1,13 +1,15 @@
 /* Phones */
 @media (max-width: 605px) {
-        .about-skill{
-            gap: 1rem;
-        }
-}
-@media (max-width: 640px) {
-    h2{
-        font-size: 2.5rem;
+    .about-skill {
+        gap: 1rem;
     }
+}
+
+@media (max-width: 640px) {
+    h2 {
+        font-size: 2.5rem !important;
+    }
+
     .hero .info {
         max-width: 75%;
         padding: 5% 5% 5% 10%;
@@ -24,12 +26,17 @@
 }
 
 @media screen and (max-width: 640px) and (max-height: 700px) {
+    h2 {
+        font-size: 2.5rem !important;
+    }
+
     .hero .info {
         max-width: 75%;
         padding: 5% 5% 5% 15%;
         height: 55%;
     }
-    .skills-bubbles{
+
+    .skills-bubbles {
         width: 110%;
         gap: 2.5rem 0rem;
     }
@@ -56,10 +63,11 @@
 
 /* Small laptops */
 @media (min-width: 890px) {
-    .about-skill{
+    .about-skill {
         aspect-ratio: 0;
     }
 }
+
 @media (min-width: 1024px) {
     .hero .info {
         max-width: 50%;
@@ -69,11 +77,12 @@
     #PFP {
         left: 0;
     }
-    .skills-bubbles{
+
+    .skills-bubbles {
         width: 80%;
         gap: 2.5rem 4rem;
     }
-    
+
 }
 
 /* Desktops */

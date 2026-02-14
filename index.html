@@ -6,9 +6,11 @@
     <meta name="color-scheme" content="light only" />
     <meta name="supported-color-schemes" content="light" />
     <title>Olumide | About</title>
-    <link rel="stylesheet" href="Styles/style.css" />
+    <link rel="stylesheet" href="Styles/index.css" />
     <link rel="stylesheet" href="Styles/bg-animation.css" />
     <link rel="stylesheet" href="Styles/media.css" />
+    <link rel="stylesheet" href="Styles/general-style.css">
+    <link rel="stylesheet" href="Styles/animations.css">
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -20,68 +22,6 @@
   </head>
 
   <body>
-    <svg style="display: none">
-      <filter
-        id="real-glass"
-        filterUnits="objectBoundingBox"
-        x="0"
-        y="0"
-        width="1"
-        height="1"
-      >
-        <!-- 1. Create Noise Texture -->
-        <feTurbulence
-          type="fractalNoise"
-          baseFrequency="0.8"
-          numOctaves="3"
-          result="noise"
-        />
-
-        <!-- 2. Adjust Noise Contrast -->
-        <feColorMatrix
-          type="matrix"
-          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.5 0"
-          in="noise"
-          result="softNoise"
-        />
-
-        <!-- 3. Blur the Background (Standard Glass) -->
-        <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="blurred" />
-
-        <!-- 4. Distort the Blurred Background using Noise (Refraction) -->
-        <feDisplacementMap
-          in="blurred"
-          in2="softNoise"
-          scale="20"
-          xChannelSelector="R"
-          yChannelSelector="G"
-          result="refracted"
-        />
-
-        <!-- 5. Add Lighting -->
-        <feSpecularLighting
-          in="softNoise"
-          surfaceScale="5"
-          specularConstant="0.75"
-          specularExponent="20"
-          lighting-color="#ffffff"
-          result="light"
-        >
-          <fePointLight x="-5000" y="-10000" z="20000" />
-        </feSpecularLighting>
-
-        <!-- 6. Composite Light + Refracted Image -->
-        <feComposite
-          in="light"
-          in2="refracted"
-          operator="arithmetic"
-          k1="0"
-          k2="1"
-          k3="1"
-          k4="0"
-        />
-      </filter>
-    </svg>
     <div class="bubbles-BG">
       <div class="bubble purple-glass"></div>
       <div class="bubble purple-glass bubble2"></div>
@@ -117,9 +57,9 @@
           </div>
         </section>
         <section id="about">
-          <div class="about-BG" id="about-BG"></div>
+          <div class="about-BG bg" id="about-BG"></div>
           <div class="about-content" id="about-content">
-            <h2 data-aos="fade-down">About Me</h2>
+            <h2 data-aos="fade-down" class="federo-regular">About Me</h2>
 
             <article class="about-card glass" data-aos="fade-up">
               <p>
@@ -135,9 +75,76 @@
             </article>
             <article class="about-skill">
               <div class="about-skill-card glass" data-aos="fade-right"><img src="IMGs/WEB-DEV-icon.png" alt="Web Developer"><h3>Web Developer</h3></div>
-              <div class="about-skill-card glass" data-aos="fade-right" data-aos-delay="500"><img src="IMGs/BACK-END-icon.png" alt="Backend Engineer"><h3>Backend Engineer</h3></div>
-              <div class="about-skill-card glass" data-aos="fade-right" data-aos-delay="1000"><img src="IMGs/DATABASE-icon.png" alt="Database Administrator"><h3>Database Administrator</h3></div>
+              <div class="about-skill-card glass" data-aos="fade-right" data-aos-delay="400"><img src="IMGs/BACK-END-icon.png" alt="Backend Engineer"><h3>Backend Engineer</h3></div>
+              <div class="about-skill-card glass" data-aos="fade-right" data-aos-delay="800"><img src="IMGs/DB.png" alt="Database Administrator"><h3>Database Administrator</h3></div>
             </article>
+          </div>
+        </section>
+        <section id="skills">
+          <div class="skills-BG bg" id="skills-BG"></div>
+          <div class="skills-content" id="skills-content">
+            <div class="skills-content-textarea">
+              <p data-aos="fade-down">My skills</p>
+              <h2 data-aos="fade-up" class="federo-regular">Technologies.</h2>
+            </div>
+            <div class="skills-bubbles">
+              <div class="bubble-3d glass">
+                <div class="image-wrapper">
+                  <div class="image-wrapper-2">
+                    <img src="IMGs/html-logo.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="bubble-3d glass">
+                <div class="image-wrapper">
+                  <div class="image-wrapper-2">
+                    <img src="IMGs/css-logo.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="bubble-3d glass">
+                <div class="image-wrapper">
+                  <div class="image-wrapper-2">
+                    <img src="IMGs/javascript-logo.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="bubble-3d glass">
+                <div class="image-wrapper">
+                  <div class="image-wrapper-2">
+                    <img src="IMGs/typescript-logo.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="bubble-3d glass">
+                <div class="image-wrapper">
+                  <div class="image-wrapper-2">
+                    <img src="IMGs/react-logo.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="bubble-3d glass">
+                <div class="image-wrapper">
+                  <div class="image-wrapper-2">
+                    <img src="IMGs/SQL.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="bubble-3d glass">
+                <div class="image-wrapper">
+                  <div class="image-wrapper-2">
+                    <img src="IMGs/DB.png" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="bubble-3d glass">
+                <div class="image-wrapper">
+                  <div class="image-wrapper-2">
+                    <img src="IMGs/github-3b4e1609.png" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>
@@ -149,5 +156,6 @@
       AOS.init();
     </script>
     <script src="JS/index.js"></script>
+    <!-- <script type="module" src="JS/sphare.js"></script> -->
   </body>
 </html>

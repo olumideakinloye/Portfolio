@@ -104,6 +104,7 @@ main {
 }
 
 #about {
+    z-index: 2;
     color: #C084FF;
     position: relative;
     background-color: aliceblue;
@@ -137,8 +138,6 @@ main {
     padding: 1rem;
     width: 200px;
     aspect-ratio: 1/1;
-    justify-self: center;
-    align-self: center;
     border-radius: 20px;
 }
 
@@ -155,6 +154,7 @@ main {
 }
 
 #skills {
+    z-index: 2;
     color: white;
     position: relative;
     background: radial-gradient(circle at bottom left, #6a00ff33, transparent 60%),
@@ -194,6 +194,7 @@ main {
         radial-gradient(circle at bottom right, #b100ff44, transparent 60%),
         #05000a00;
     color: white;
+    z-index: 2;
 }
 
 .project-cards {
@@ -219,14 +220,10 @@ main {
 
 .project-img {
     width: 100%;
-    aspect-ratio: 1 / 1;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #979797;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     border-radius: 10px;
     position: relative;
     overflow: hidden;
@@ -268,7 +265,7 @@ main {
     -webkit-line-clamp: unset;
 }
 
-.project-card p a{
+.project-card p a {
     color: #c084ff;
     text-decoration: none;
     display: inline-flex;
@@ -294,4 +291,95 @@ main {
 
 .read-more-btn:hover {
     color: #d6b3ff;
+}
+
+#contact {
+    height: 100vh;
+    position: relative;
+}
+
+#contact-form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 5%;
+    border-radius: 20px;
+    position: absolute;
+    z-index: 2;
+    margin-top: 1.5rem;
+}
+
+#contact h2 {
+    color: #C084FF;
+    top: 5%;
+    left: 8%;
+    position: absolute;
+    z-index: 2;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: 0.5rem;
+}
+
+.input label {
+    font-weight: 900 !important;
+}
+
+.input input {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    color: #d8b4ff;
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    text-shadow: 0 0 10px black;
+}
+
+.input input::placeholder {
+    color: rgb(219, 219, 219);
+}
+
+.input textarea {
+    resize: none;
+    padding: 0.5rem;
+    border-radius: 15px;
+    color: #d8b4ff;
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    text-shadow: 0 0 10px black;
+
+}
+
+.input textarea::-webkit-scrollbar {
+    display: none;
+}
+
+.input textarea::placeholder {
+    color: rgb(219, 219, 219);
+}
+
+#contact-form button {
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 20px;
+    color: #ffffff;
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+    transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+#contact-form button span{
+    font-weight: 500;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1rem;
+}
+
+#contact-form button:hover {
+    transform: translateY(-10px) scale(1.05);
+    color: rgb(173, 173, 173);
 }

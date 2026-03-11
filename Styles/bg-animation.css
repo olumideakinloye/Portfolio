@@ -6,7 +6,8 @@ body .bubbles-BG {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto auto auto;
     gap: 20px;
-    z-index: 0;
+    z-index: 1;
+    justify-content: center;
     overflow: hidden;
 }
 
@@ -20,7 +21,6 @@ body .bubbles-BG .bubble {
     -webkit-backdrop-filter: blur(10px);
     align-self: center;
     justify-self: center;
-    opacity: 0.5;
 }
 
 body .bubbles-BG .bubble:nth-child(1) {

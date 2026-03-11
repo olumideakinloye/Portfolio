@@ -30,7 +30,7 @@ html {
 }
 
 .glass {
-    background: #ffffff21 !important;
+    background: #ffffff21;
     -webkit-backdrop-filter: blur(10px) brightness(1.2);
     backdrop-filter: blur(10px) brightness(1.2);
     box-shadow:
@@ -54,22 +54,35 @@ html {
     color-scheme: light;
 }
 
-.dark-glass {
-    background: linear-gradient(135deg,
-            rgba(20, 20, 25, 0.65),
-            rgba(10, 10, 15, 0.35));
-    backdrop-filter: blur(16px) saturate(130%);
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 20px;
+.purple-glass {
+    background: rgba(60, 0, 120, 0.15) !important;
+    -webkit-backdrop-filter: blur(10px) brightness(1.1) saturate(180%);
+    backdrop-filter: blur(10px) brightness(1.1) saturate(180%);
     box-shadow:
-        0 10px 40px rgba(0, 0, 0, 0.65),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1),
-        inset 0 -1px 0 rgba(0, 0, 0, 0.6);
+        inset 0 1px 0 rgba(180, 100, 255, 0.22),
+        0 12px 30px rgba(0, 0, 0, 0.55),
+        0 0 40px rgba(100, 20, 220, 0.06);
+    border: 1px solid rgba(160, 80, 255, 0.18);
+    forced-color-adjust: none;
+    color-scheme: dark;
+}
+
+.purple-glass::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(120deg,
+            rgba(140, 60, 255, 0.12),
+            transparent 40%) !important;
+    pointer-events: none;
+    forced-color-adjust: none;
+    color-scheme: dark;
 }
 
 .purple-glow {
     background: linear-gradient(135deg,
-            rgba(120, 60, 255, 0.35),
+            rgba(118, 60, 255, 0.212),
             rgba(40, 10, 90, 0.25));
 
     backdrop-filter: blur(18px) saturate(140%);
@@ -83,35 +96,10 @@ html {
         inset 0 1px 0 rgba(255, 255, 255, 0.103);
 
     box-shadow:
-        0 0 15px #8a3cffdc,
-        0 0 40px rgba(138, 60, 255, 0.473);
+        0 0 15px #8a3cff85,
+        0 0 40px rgba(138, 60, 255, 0.26);
 
     color: white;
-}
-
-.purple-glass {
-    background: rgba(120, 60, 255, 0.35) !important;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    box-shadow:
-        inset 0 1px 0 #8a3cffdc,
-        0 12px 30px rgba(40, 10, 90, 0.25);
-    border: 1px solid rgba(138, 60, 255, 0.473);
-    /* forced-color-adjust: none;
-    color-scheme: light; */
-}
-
-.purple-glass::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: linear-gradient(120deg,
-            #8a3cffdc,
-            transparent 40%) !important;
-    pointer-events: none;
-    forced-color-adjust: none;
-    color-scheme: light;
 }
 
 .bg {
@@ -161,22 +149,49 @@ html {
     color: rgb(177, 177, 177);
 }
 
-.floating-link{
+.project-aos {
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+}
+
+.about-aos {
+    justify-self: center;
+    align-self: center;
+}
+
+.floating-link {
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
     text-decoration: none;
-    z-index: 3;
-    background-color: rgb(0, 0, 0);
+    z-index: 4;
     border-radius: 50%;
     padding: 0.5rem;
+    background-color: rgb(0, 0, 0);
 }
-.floating-link i{
+
+.floating-link i {
     font-size: 2.5rem;
 }
-.floating-link:hover{
-    background-color: #1b1b1b;
+
+.floating-link:hover i {
+    color: #1b1b1b;
 }
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../IMGs/BG2.jpg);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
+}
+
 h2 {
     font-size: 2.7rem
 }

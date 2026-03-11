@@ -14,8 +14,20 @@ const projectImgs = [
   "./IMGs/toDoApp.png",
 ];
 const skills = [
-  { name: "HTML5", icon: "<i class='fab fa-html5' style='color: rgb(255, 119, 28)'></i>", color: "#7c2b15", type: "Markup", level: 95 },
-  { name: "CSS3", icon: "<i class='fa-brands fa-css3-alt' style='color: rgb(8, 164, 253)'></i>", color: "#264de4", type: "Styling", level: 90 },
+  {
+    name: "HTML5",
+    icon: "<i class='fab fa-html5' style='color: rgb(255, 119, 28)'></i>",
+    color: "#7c2b15",
+    type: "Markup",
+    level: 95,
+  },
+  {
+    name: "CSS3",
+    icon: "<i class='fa-brands fa-css3-alt' style='color: rgb(8, 164, 253)'></i>",
+    color: "#264de4",
+    type: "Styling",
+    level: 90,
+  },
   {
     name: "JavaScript",
     icon: "<i class='fa-brands fa-js' style='color: rgb(255, 212, 59)'></i>",
@@ -30,10 +42,34 @@ const skills = [
     type: "Language",
     level: 78,
   },
-  { name: "React", icon: "<i class='fa-brands fa-react' style='color: #68deff'></i>", color: "#47a2bb", type: "Framework", level: 85 },
-  { name: "Node.js", icon: "<i class='fa-brands fa-node-js' style='color: rgb(2, 216, 9)'></i>", color: "#68a063", type: "Runtime", level: 80 },
-  { name: "MySQL", icon: "<i class='devicon-mysql-plain' style='color: #63ace4'></i>", color: "#4479a1", type: "Database", level: 75 },
-  { name: "PHP", icon: "<i class='fa-brands fa-php' style='color: rgb(153, 180, 195)'></i>", color: "#777bb4", type: "Language", level: 70 },
+  {
+    name: "React",
+    icon: "<i class='fa-brands fa-react' style='color: #68deff'></i>",
+    color: "#47a2bb",
+    type: "Framework",
+    level: 85,
+  },
+  {
+    name: "Node.js",
+    icon: "<i class='fa-brands fa-node-js' style='color: rgb(2, 216, 9)'></i>",
+    color: "#68a063",
+    type: "Runtime",
+    level: 80,
+  },
+  {
+    name: "MySQL",
+    icon: "<i class='devicon-mysql-plain' style='color: #63ace4'></i>",
+    color: "#4479a1",
+    type: "Database",
+    level: 75,
+  },
+  {
+    name: "PHP",
+    icon: "<i class='fa-brands fa-php' style='color: rgb(153, 180, 195)'></i>",
+    color: "#777bb4",
+    type: "Language",
+    level: 70,
+  },
   {
     name: "GitHub",
     icon: "<i class='devicon-github-original colored'></i>",
@@ -49,6 +85,9 @@ const skills = [
     level: 72,
   },
 ];
+
+const form = document.getElementById("contact-form");
+
 
 function type() {
   // Pause when typing finishes
@@ -161,6 +200,26 @@ projectImgs.forEach((src, index) => {
   };
 });
 
+emailjs.init("ujo5yM-K3MnFQJXzS");
+form.addEventListener("submit", function (e) {
+  if (this.querySelector("input").value.length > 0) {
+    form.querySelector("button span").textContent = "Sending...";
+    e.preventDefault();
+
+    emailjs.sendForm("service_zk0k20b", "template_bfs1uu7", this).then(
+      function () {
+        alert("Message sent!");
+        form.reset();
+        form.querySelector("button span").textContent = "Send";
+      },
+      function (error) {
+        alert("Failed: " + error.text);
+        form.querySelector("button span").textContent = "Send";
+      },
+    );
+  }
+});
+
 /* ── 1. MORPHING BLOB ── */
 (function () {
   let idx = 0;
@@ -168,7 +227,7 @@ projectImgs.forEach((src, index) => {
     document.getElementById("blobIcon").innerHTML = skills[i].icon;
     document.getElementById("blobName").textContent = skills[i].name;
     document.getElementById("blobCounter").textContent =
-     i < 9 ? `0${i + 1} / ${skills.length}` : `${i + 1} / ${skills.length}`;
+      i < 9 ? `0${i + 1} / ${skills.length}` : `${i + 1} / ${skills.length}`;
     document.getElementById("morphBlob").style.background =
       `radial-gradient(circle at 38% 35%, ${skills[i].color}, #1a0533 70%)`;
     document.getElementById("morphBlob").style.boxShadow =

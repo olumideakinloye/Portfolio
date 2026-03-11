@@ -33,6 +33,7 @@
       rel="stylesheet"
     />
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
   </head>
 
   <body>
@@ -43,7 +44,6 @@
       <div class="bubble purple-glow bubble4"></div>
       <div class="bubble purple-glow bubble5"></div>
     </div>
-    <!-- <div class="background"></div> -->
     <div class="content">
       <header data-aos="fade-down">
         <nav class="glass">
@@ -179,8 +179,8 @@
                     href="https://olumideakinloye.github.io/Ludo/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    >Try live demo <i class="fa-solid fa-arrow-right"></i></a
-                  >
+                    >Try live demo <i class="fa-solid fa-arrow-right"></i
+                  ></a>
                 </p>
                 <button class="read-more-btn">Read more</button>
               </div>
@@ -189,6 +189,7 @@
               <div class="project-card float glass">
                 <a
                   href="https://github.com/olumideakinloye/dev-office-baseline"
+                  target="_blank"
                   class="floating-link"
                 >
                   <i
@@ -231,6 +232,47 @@
             </div>
           </div>
         </section>
+        <section class="contact section-content" id="contact">
+          <h2 class="federo-regular">Contact</h2>
+          <div class="background"></div>
+          <form id="contact-form" class="glass">
+            <div class="input">
+              <label for="name">Your Name</label>
+              <input
+                class="purple-glass"
+                type="text"
+                name="name"
+                required
+                placeholder="Enter your full name"
+              />
+            </div>
+            <div class="input">
+              <label for="email">Your Email</label>
+              <input
+                class="purple-glass"
+                type="email"
+                name="email"
+                required
+                placeholder="Enter you emal addres"
+              />
+            </div>
+            <div class="input">
+              <label for="message">Your Message</label>
+              <textarea
+                class="purple-glass"
+                name="message"
+                required
+                maxlength="700"
+                rows="15"
+                placeholder="What's your message?"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="glass">
+              <span>Send</span> <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </section>
       </main>
       <footer>
         <p></p>
@@ -240,6 +282,5 @@
       AOS.init({ once: true });
     </script>
     <script src="JS/index.js"></script>
-    <!-- <script type="module" src="JS/sphare.js"></script> -->
   </body>
 </html>

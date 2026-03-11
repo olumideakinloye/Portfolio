@@ -7,17 +7,18 @@
 
 @media (max-width: 640px) {
     h2 {
-        font-size: 2.5rem !important;
+        font-size: 1.8rem !important;
     }
 
     .hero .info {
         max-width: 75%;
         padding: 5% 5% 5% 10%;
-        height: 45%;
+        height: 35%;
     }
 
     .hero .info h2 {
-        height: 40%;
+        height: 35%;
+        font-size: 2rem;
     }
 
     body .background {
@@ -27,13 +28,22 @@
 
 @media screen and (max-width: 640px) and (max-height: 700px) {
     h2 {
-        font-size: 2.5rem !important;
+        font-size: 1.4rem !important;
     }
 
     .hero .info {
         max-width: 75%;
         padding: 5% 5% 5% 15%;
-        height: 55%;
+        height: 50%;
+    }
+
+    .hero .info h2 {
+        height: 15%;
+        font-size: 2.3rem;
+    }
+
+    .morph-blob {
+        width: 70%;
     }
 
     .skills-bubbles {
@@ -51,6 +61,10 @@
     body .background {
         background-position: right;
     }
+
+    .blob-icon {
+        font-size: 6rem;
+    }
 }
 
 /* Tablets */
@@ -59,6 +73,18 @@
         max-width: 50%;
         height: 55%;
     }
+
+    .orbit-wrap {
+        width: 80%;
+    }
+
+    .morph-blob {
+        width: 50%;
+    }
+    p{
+        font-size: 1.2rem;
+    }
+
 }
 
 /* Small laptops */
@@ -66,12 +92,16 @@
     .about-skill {
         aspect-ratio: 0;
     }
+
+    .morph-blob {
+        width: 40%;
+    }
 }
 
 @media (min-width: 1024px) {
     .hero .info {
         max-width: 50%;
-        height: 60%;
+        height: 50%;
     }
 
     #PFP {
@@ -83,10 +113,25 @@
         gap: 2.5rem 4rem;
     }
 
+    .orbit-wrap {
+        width: 70%;
+    }
 }
 
 /* Desktops */
-@media (min-width: 1280px) {}
+@media (min-width: 1280px) {
+    .orbit-wrap {
+        width: 50%;
+    }
+
+    .morph-blob {
+        width: 30%;
+    }
+
+    .blob-icon {
+        font-size: 7rem;
+    }
+}
 
 /* Large screens */
 @media (min-width: 1536px) {

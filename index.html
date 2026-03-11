@@ -6,14 +6,28 @@
     <meta name="color-scheme" content="light only" />
     <meta name="supported-color-schemes" content="light" />
     <title>Olumide | About</title>
-    <link rel="stylesheet" href="Styles/general-style.css">
+    <link rel="stylesheet" href="Styles/general-style.css" />
     <link rel="stylesheet" href="Styles/index.css" />
+    <link rel="stylesheet" href="Styles/orbit.css" />
     <link rel="stylesheet" href="Styles/bg-animation.css" />
-    <link rel="stylesheet" href="Styles/animations.css">
+    <link rel="stylesheet" href="Styles/animations.css" />
     <link rel="stylesheet" href="Styles/media.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Federo&family=Playwrite+IS:wght@100..400&display=swap"
       rel="stylesheet"
@@ -23,13 +37,13 @@
 
   <body>
     <div class="bubbles-BG">
-      <div class="bubble purple-glass"></div>
-      <div class="bubble purple-glass bubble2"></div>
-      <div class="bubble purple-glass bubble3 center"></div>
-      <div class="bubble purple-glass bubble4"></div>
-      <div class="bubble purple-glass bubble5"></div>
+      <div class="bubble purple-glow"></div>
+      <div class="bubble purple-glow bubble2"></div>
+      <div class="bubble purple-glow bubble3 center"></div>
+      <div class="bubble purple-glow bubble4"></div>
+      <div class="bubble purple-glow bubble5"></div>
     </div>
-    <div class="background"></div>
+    <!-- <div class="background"></div> -->
     <div class="content">
       <header data-aos="fade-down">
         <nav class="glass">
@@ -56,12 +70,10 @@
             </p>
           </div>
         </section>
-        <section id="about">
-          <div class="about-BG bg" id="about-BG"></div>
-          <div class="about-content" id="about-content">
+        <section id="about" class="section-content">
+          <div class="content-textarea">
             <h2 data-aos="fade-down" class="federo-regular">About Me</h2>
-
-            <article class="about-card glass" data-aos="fade-up">
+            <article class="article" data-aos="fade-up">
               <p>
                 I build modern, interactive, and visually striking web
                 experiences. As a Frontend Developer, I focus on writing clean
@@ -73,76 +85,148 @@
                 continuous improvement.
               </p>
             </article>
-            <article class="about-skill">
-              <div class="about-skill-card glass" data-aos="fade-right"><img src="IMGs/WEB-DEV-icon.png" alt="Web Developer"><h3>Web Developer</h3></div>
-              <div class="about-skill-card glass" data-aos="fade-right" data-aos-delay="400"><img src="IMGs/BACK-END-icon.png" alt="Backend Engineer"><h3>Backend Engineer</h3></div>
-              <div class="about-skill-card glass" data-aos="fade-right" data-aos-delay="800"><img src="IMGs/DB.png" alt="Database Administrator"><h3>Database Administrator</h3></div>
-            </article>
+          </div>
+          <article class="about-skill">
+            <div class="about-aos" data-aos="fade-right">
+              <div class="about-skill-card float2 glass">
+                <img src="IMGs/WEB-DEV-icon.png" alt="Web Developer" />
+                <h3>Web Developer</h3>
+              </div>
+            </div>
+            <div class="about-aos" data-aos="fade-right" data-aos-delay="400">
+              <div class="about-skill-card float2 glass">
+                <img src="IMGs/BACK-END-icon.png" alt="Backend Engineer" />
+                <h3>Backend Engineer</h3>
+              </div>
+            </div>
+            <div class="about-aos" data-aos="fade-right" data-aos-delay="800">
+              <div class="about-skill-card glass float2">
+                <img src="IMGs/DB.png" alt="Database Administrator" />
+                <h3>Database Administrator</h3>
+              </div>
+            </div>
+          </article>
+        </section>
+        <section id="skills" class="section-content">
+          <div class="content-textarea justify-right">
+            <h2 data-aos="fade-up" class="federo-regular">Technologies</h2>
+            <p data-aos="fade-up">
+              Technologies and tools I use to build applications.
+            </p>
+          </div>
+          <div class="blob-stage">
+            <div class="morph-blob" id="morphBlob">
+              <div class="blob-icon" id="blobIcon">
+                <i class="fab fa-html5" style="color: rgb(255, 119, 28)"></i>
+              </div>
+              <div class="blob-name federo-regular" id="blobName">HTML5</div>
+              <div class="blob-counter" id="blobCounter">01 / 10</div>
+            </div>
+            <div class="blob-dots" style="position: relative; bottom: auto">
+              <div class="blob-dot active" id="bd0"></div>
+              <div class="blob-dot" id="bd1"></div>
+              <div class="blob-dot" id="bd2"></div>
+              <div class="blob-dot" id="bd3"></div>
+              <div class="blob-dot" id="bd4"></div>
+              <div class="blob-dot" id="bd5"></div>
+              <div class="blob-dot" id="bd6"></div>
+              <div class="blob-dot" id="bd7"></div>
+              <div class="blob-dot" id="bd8"></div>
+              <div class="blob-dot" id="bd9"></div>
+            </div>
           </div>
         </section>
-        <section id="skills">
-          <div class="skills-BG bg" id="skills-BG"></div>
-          <div class="skills-content" id="skills-content">
-            <div class="skills-content-textarea">
-              <p data-aos="fade-down">My skills</p>
-              <h2 data-aos="fade-up" class="federo-regular">Technologies.</h2>
+        <section id="projects" class="projects section-content">
+          <div class="content-textarea">
+            <h2 data-aos="fade-up" class="federo-regular">Projects</h2>
+            <article class="article" data-aos="fade-up">
+              <p>
+                These projects demonstrate my expertise with practical examples
+                of some of my work, including brief descriptions and links to
+                code repositories and live demos. They showcase my ability to
+                tackle intricate challenges, adapt to various technologies, and
+                efficiently oversee projects. Each one helped me grow as a
+                developer and solve practical problems
+              </p>
+            </article>
+          </div>
+          <div class="project-cards">
+            <div class="project-aos" data-aos="fade-right">
+              <div class="project-card float glass">
+                <a
+                  href="https://github.com/olumideakinloye/Ludo"
+                  class="floating-link"
+                >
+                  <i
+                    class="fa-brands fa-github"
+                    style="color: rgb(255, 255, 255)"
+                  ></i>
+                </a>
+                <div class="project-img">
+                  <div class="project-img-loader"></div>
+                  <img alt="gallery image" />
+                </div>
+                <p>
+                  A multiplayer Ludo board game developed using React and
+                  TypeScript that recreates the classic board game experience in
+                  the browser. The application uses WebSockets to enable
+                  real-time gameplay between connected players and local storage
+                  to maintain board state and game data on the client side. Core
+                  gameplay mechanics such as dice rolling, player turns, token
+                  movement, and win conditions were implemented to provide an
+                  interactive and responsive user experience.
+                  <a
+                    href="https://olumideakinloye.github.io/Ludo/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Try live demo <i class="fa-solid fa-arrow-right"></i></a
+                  >
+                </p>
+                <button class="read-more-btn">Read more</button>
+              </div>
             </div>
-            <div class="skills-bubbles">
-              <div class="bubble-3d glass">
-                <div class="image-wrapper">
-                  <div class="image-wrapper-2">
-                    <img src="IMGs/html-logo.png" alt="">
-                  </div>
+            <div class="project-aos" data-aos="fade-right" data-aos-delay="400">
+              <div class="project-card float glass">
+                <a
+                  href="https://github.com/olumideakinloye/dev-office-baseline"
+                  class="floating-link"
+                >
+                  <i
+                    class="fa-brands fa-github"
+                    style="color: rgb(255, 255, 255)"
+                  ></i>
+                </a>
+                <div class="project-img">
+                  <div class="project-img-loader"></div>
+                  <img alt="gallery image" />
                 </div>
+                <p>
+                  A task management application built with Java that allows
+                  users to create, update, and manage daily tasks efficiently.
+                  The application provides core task management features such as
+                  adding, editing, marking tasks as completed, and deleting
+                  tasks. The project focuses on structured application logic,
+                  clean task organization, and reliable data handling.
+                </p>
+                <button class="read-more-btn">Read more</button>
               </div>
-              <div class="bubble-3d glass">
-                <div class="image-wrapper">
-                  <div class="image-wrapper-2">
-                    <img src="IMGs/css-logo.png" alt="">
-                  </div>
+            </div>
+            <div class="project-aos" data-aos="fade-right" data-aos-delay="800">
+              <div class="project-card float glass">
+                <div class="project-img">
+                  <div class="project-img-loader"></div>
+                  <img alt="gallery image" />
                 </div>
-              </div>
-              <div class="bubble-3d glass">
-                <div class="image-wrapper">
-                  <div class="image-wrapper-2">
-                    <img src="IMGs/javascript-logo.png" alt="" style="border-radius: 15px;">
-                  </div>
-                </div>
-              </div>
-              <div class="bubble-3d glass">
-                <div class="image-wrapper">
-                  <div class="image-wrapper-2">
-                    <img src="IMGs/typescript-logo.png" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="bubble-3d glass">
-                <div class="image-wrapper">
-                  <div class="image-wrapper-2">
-                    <img src="IMGs/react-logo.png" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="bubble-3d glass">
-                <div class="image-wrapper">
-                  <div class="image-wrapper-2">
-                    <img src="IMGs/SQL.png" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="bubble-3d glass">
-                <div class="image-wrapper">
-                  <div class="image-wrapper-2">
-                    <img src="IMGs/DB.png" alt="">
-                  </div>
-                </div>
-              </div>
-              <div class="bubble-3d glass">
-                <div class="image-wrapper">
-                  <div class="image-wrapper-2">
-                    <img src="IMGs/github-3b4e1609.png" alt="">
-                  </div>
-                </div>
+                <p>
+                  A real-time messaging platform built using React, TypeScript,
+                  Socket.IO, and MongoDB. The application enables instant
+                  communication between users through WebSocket-based
+                  connections, allowing messages to be sent and received with
+                  minimal delay. Chat messages are stored in MongoDB to maintain
+                  conversation history, and the system supports multiple
+                  concurrent users interacting in real time.
+                </p>
+                <button class="read-more-btn">Read more</button>
               </div>
             </div>
           </div>
@@ -153,7 +237,7 @@
       </footer>
     </div>
     <script>
-      AOS.init({once: true});
+      AOS.init({ once: true });
     </script>
     <script src="JS/index.js"></script>
     <!-- <script type="module" src="JS/sphare.js"></script> -->

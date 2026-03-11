@@ -1,0 +1,123 @@
+.blob {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.2;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.blob1 {
+    width: 600px;
+    height: 600px;
+    background: #6d28d9;
+    top: -200px;
+    left: -200px;
+}
+
+.blob2 {
+    width: 500px;
+    height: 500px;
+    background: #7c3aed;
+    bottom: -150px;
+    right: -150px;
+}
+
+/* ── 1. MORPHING BLOB ── */
+.blob-stage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    width: 100%;
+}
+
+.morph-blob {
+    width: 60%;
+    aspect-ratio: 1 / 1;
+    background: radial-gradient(circle at 38% 35%, #7c3aed, #1a0533 70%);
+    border-radius: 60% 40% 55% 45% / 50% 60% 40% 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 0 60px rgba(139, 92, 246, 0.5), inset 0 0 40px rgba(139, 92, 246, 0.15);
+    animation: morph 6s ease-in-out infinite;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.morph-blob::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 30% 28%, rgba(255, 255, 255, 0.12), transparent 55%);
+    border-radius: inherit;
+}
+
+@keyframes morph {
+
+    0%,
+    100% {
+        border-radius: 60% 40% 55% 45% / 50% 60% 40% 55%;
+    }
+
+    25% {
+        border-radius: 45% 55% 40% 60% / 60% 45% 55% 40%;
+    }
+
+    50% {
+        border-radius: 55% 45% 65% 35% / 45% 55% 45% 60%;
+    }
+
+    75% {
+        border-radius: 40% 60% 45% 55% / 55% 40% 60% 45%;
+    }
+}
+
+.blob-icon {
+    font-size: 5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.blob-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1rem;
+    color: #fff;
+    position: relative;
+    z-index: 1;
+}
+
+.blob-counter {
+    font-size: 0.7rem;
+    color: #c4b5fd;
+    position: relative;
+    z-index: 1;
+    letter-spacing: 0.1em;
+}
+
+.blob-dots {
+    display: flex;
+    gap: 6px;
+    position: absolute;
+    bottom: 24px;
+}
+
+.blob-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(139, 92, 246, 0.35);
+    border: 1px solid rgba(139, 92, 246, 0.5);
+    transition: all 0.3s;
+}
+
+.blob-dot.active {
+    background: var(--purple-bright);
+    box-shadow: 0 0 8px var(--purple-bright);
+}

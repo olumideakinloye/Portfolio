@@ -88,7 +88,6 @@ const skills = [
 
 const form = document.getElementById("contact-form");
 
-
 function type() {
   // Pause when typing finishes
   if (!isDeleting && index === text.length) {
@@ -221,30 +220,94 @@ form.addEventListener("submit", function (e) {
 });
 
 /* ── 1. MORPHING BLOB ── */
-(function () {
-  let idx = 0;
-  function update(i) {
-    document.getElementById("blobIcon").innerHTML = skills[i].icon;
-    document.getElementById("blobName").textContent = skills[i].name;
-    document.getElementById("blobCounter").textContent =
-      i < 9 ? `0${i + 1} / ${skills.length}` : `${i + 1} / ${skills.length}`;
-    document.getElementById("morphBlob").style.background =
-      `radial-gradient(circle at 38% 35%, ${skills[i].color}, #1a0533 70%)`;
-    document.getElementById("morphBlob").style.boxShadow =
-      `0 0 60px ${skills[i].color}66, inset 0 0 40px rgb(33, 22, 59)`;
-    for (let j = 0; j < 10; j++) {
-      const d = document.getElementById("bd" + j);
-      d.classList.toggle("active", j === i);
-      d.style.background = j === i ? skills[i].color : "";
-      d.style.boxShadow = j === i ? `0 0 8px ${skills[i].color}` : "";
-    }
-  }
-  setInterval(() => {
-    idx = (idx + 1) % skills.length;
-    update(idx);
-  }, 2000);
-  update(0);
-})();
+
+const dotsWrap = document.getElementById("dotsWrap");
+skills.forEach((s, i) => {
+  const d = document.createElement("div");
+  d.className = "blob-dot" + (i === 0 ? " active" : "");
+  d.id = "bd" + i;
+  d.addEventListener("click", () => {
+    idx = i;
+    update(i);
+    resetAutoPlay();
+  });
+  dotsWrap.appendChild(d);
+});
+
+let idx = 0;
+let autoTimer = null;
+function update(i) {
+  const blob = document.getElementById("morphBlob");
+  const icon = document.getElementById("blobIcon");
+  const name = document.getElementById("blobName");
+  const counter = document.getElementById("blobCounter");
+
+  // Animate text swap
+  [icon, name, counter].forEach((el) => {
+    el.classList.remove("fade-in");
+    void el.offsetWidth; // reflow to restart animation
+    el.classList.add("fade-in");
+  });
+
+  icon.innerHTML = skills[i].icon;
+  name.textContent = skills[i].name;
+  counter.textContent = `${String(i + 1).padStart(2, "0")} / ${String(skills.length).padStart(2, "0")}`;
+
+  blob.style.background = `radial-gradient(circle at 38% 35%, ${skills[i].color}, #0a0118 70%)`;
+  blob.style.boxShadow = `0 0 70px ${skills[i].color}88, inset 0 0 40px rgba(139,92,246,0.15)`;
+
+  // dots
+  skills.forEach((_, j) => {
+    const d = document.getElementById("bd" + j);
+    d.classList.toggle("active", j === i);
+    d.style.background = j === i ? skills[i].color : "";
+    d.style.boxShadow = j === i ? `0 0 8px ${skills[i].color}` : "";
+    d.style.borderColor = j === i ? skills[i].color : "";
+  });
+}
+
+window.changeSkill = function (direction) {
+  idx = (idx + direction + skills.length) % skills.length;
+  update(idx);
+  resetAutoPlay();
+};
+
+function resetAutoPlay() {
+  clearInterval(autoTimer);
+  // restart progress bar animation
+  const bar = document.getElementById("autoBar");
+  bar.classList.remove("paused");
+  bar.style.animation = "none";
+  void bar.offsetWidth;
+  bar.style.animation = "";
+  autoTimer = setInterval(() => changeSkill(1), 2000);
+}
+
+// Pause autoplay on hover
+document.getElementById("morphBlob").addEventListener("mouseenter", () => {
+  clearInterval(autoTimer);
+  document.getElementById("autoBar").classList.add("paused");
+});
+document.getElementById("morphBlob").addEventListener("mouseleave", () => {
+  resetAutoPlay();
+});
+
+resetAutoPlay();
+update(0);
+
+const links = document.querySelectorAll('.nav-link');
+
+links.forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href').slice(1);
+    const targetSection = document.getElementById(targetId);
+
+    targetSection.scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
 
 const readMoreBtns = document.querySelectorAll(".read-more-btn");
 readMoreBtns.forEach((btn) => {

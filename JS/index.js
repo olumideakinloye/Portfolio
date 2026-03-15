@@ -6,87 +6,93 @@ let isDeleting = false;
 
 const typingSpeed = 80;
 const deletingSpeed = 50;
-const pauseAfterTyping = 1200;
+const pauseAfterTyping = 2000;
 const pauseAfterDeleting = 600;
 const projectImgs = [
   "./IMGs/ludoApp.png",
   "./IMGs/chatApp.jpg",
   "./IMGs/toDoApp.png",
 ];
+
+let currentViewingSkillIndex = 0;
 const skills = [
   {
     name: "HTML5",
-    icon: "<i class='fab fa-html5' style='color: rgb(255, 119, 28)'></i>",
-    color: "#7c2b15",
+    icon: "<i class='fab fa-html5' style='color: #C084FF'></i>",
+    color: "#C084FF",
     type: "Markup",
     level: 95,
   },
   {
     name: "CSS3",
-    icon: "<i class='fa-brands fa-css3-alt' style='color: rgb(8, 164, 253)'></i>",
-    color: "#264de4",
+    icon: "<i class='fa-brands fa-css3-alt' style='color: #C084FF'></i>",
+    color: "#C084FF",
     type: "Styling",
     level: 90,
   },
   {
     name: "JavaScript",
-    icon: "<i class='fa-brands fa-js' style='color: rgb(255, 212, 59)'></i>",
-    color: "#af9e18",
+    icon: "<i class='fa-brands fa-js' style='color: #C084FF'></i>",
+    color: "#C084FF",
     type: "Language",
     level: 88,
   },
   {
     name: "TypeScript",
-    icon: "<i class='devicon-typescript-plain' style='color: rgb(8, 164, 253)'></i>",
-    color: "#3178c6",
+    icon: "<i class='devicon-typescript-plain' style='color: #C084FF'></i>",
+    color: "#C084FF",
     type: "Language",
     level: 78,
   },
   {
     name: "React",
-    icon: "<i class='fa-brands fa-react' style='color: #68deff'></i>",
-    color: "#47a2bb",
+    icon: "<i class='fa-brands fa-react' style='color: #C084FF'></i>",
+    color: "#C084FF",
     type: "Framework",
     level: 85,
   },
   {
     name: "Node.js",
-    icon: "<i class='fa-brands fa-node-js' style='color: rgb(2, 216, 9)'></i>",
-    color: "#68a063",
+    icon: "<i class='fa-brands fa-node-js' style='color: #C084FF'></i>",
+    color: "#C084FF",
     type: "Runtime",
     level: 80,
   },
   {
     name: "MySQL",
-    icon: "<i class='devicon-mysql-plain' style='color: #63ace4'></i>",
-    color: "#4479a1",
+    icon: "<i class='devicon-mysql-plain' style='color: #C084FF'></i>",
+    color: "#C084FF",
     type: "Database",
     level: 75,
   },
   {
     name: "PHP",
-    icon: "<i class='fa-brands fa-php' style='color: rgb(153, 180, 195)'></i>",
-    color: "#777bb4",
+    icon: "<i class='fa-brands fa-php' style='color: #C084FF'></i>",
+    color: "#C084FF",
     type: "Language",
     level: 70,
   },
   {
     name: "GitHub",
-    icon: "<i class='devicon-github-original colored'></i>",
-    color: "#747474",
+    icon: "<i class='devicon-github-original' style='color: #C084FF'></i>",
+    color: "#C084FF",
     type: "Version Control",
     level: 92,
   },
   {
     name: "MongoDB",
-    icon: "<i class='devicon-mongodb-plain' style='color: #00e704'></i>",
-    color: "#47a248",
+    icon: "<i class='devicon-mongodb-plain' style='color: #C084FF'></i>",
+    color: "#C084FF",
     type: "Database",
     level: 72,
   },
 ];
 
 const form = document.getElementById("contact-form");
+
+const savedTheme = localStorage.getItem("theme");
+
+const root = document.documentElement;
 
 function type() {
   // Pause when typing finishes
@@ -120,7 +126,9 @@ function adjustAOSDelays() {
   const cards = document.querySelectorAll(".about-aos");
   const projectCards = document.querySelectorAll(".project-aos");
   if (window.innerWidth < 890) {
-    if (window.innerWidth < 640) {
+    if (window.innerWidth >= 768) {
+      removeMenu();
+    } else if (window.innerWidth < 640) {
       cards.forEach((card) => {
         if (card.hasAttribute("data-aos-delay")) {
           card.removeAttribute("data-aos-delay");
@@ -170,6 +178,35 @@ function adjustAOSDelays() {
     });
   }
 }
+
+const menuBtn = document.getElementById("menuBtn");
+
+const nav = document.getElementById("nav");
+menuBtn.addEventListener("click", () => {
+  if (menuBtn.classList.contains("active")) {
+    removeMenu();
+  } else {
+    displayMenu();
+  }
+});
+nav.querySelectorAll("li").forEach((link) => {
+  link.addEventListener("click", () => {
+    menuBtn.classList.remove("active");
+    nav.classList.remove("active-nav");
+    document.getElementById("header").classList.remove("active-nav-header");
+  });
+});
+
+const removeMenu = () => {
+  menuBtn.classList.remove("active");
+  nav.classList.remove("active-nav");
+  document.getElementById("header").classList.remove("active-nav-header");
+};
+const displayMenu = () => {
+  menuBtn.classList.add("active");
+  nav.classList.add("active-nav");
+  document.getElementById("header").classList.add("active-nav-header");
+};
 
 const boxes = document.querySelectorAll(".bubble-3d");
 
@@ -237,6 +274,7 @@ skills.forEach((s, i) => {
 let idx = 0;
 let autoTimer = null;
 function update(i) {
+  currentViewingSkillIndex = i;
   const blob = document.getElementById("morphBlob");
   const icon = document.getElementById("blobIcon");
   const name = document.getElementById("blobName");
@@ -253,7 +291,7 @@ function update(i) {
   name.textContent = skills[i].name;
   counter.textContent = `${String(i + 1).padStart(2, "0")} / ${String(skills.length).padStart(2, "0")}`;
 
-  blob.style.background = `radial-gradient(circle at 38% 35%, ${skills[i].color}, #0a0118 70%)`;
+  blob.style.background = `radial-gradient(circle at 38% 35%, ${skills[i].color}88, #0a0118 70%)`;
   blob.style.boxShadow = `0 0 70px ${skills[i].color}88, inset 0 0 40px rgba(139,92,246,0.15)`;
 
   // dots
@@ -295,16 +333,16 @@ document.getElementById("morphBlob").addEventListener("mouseleave", () => {
 resetAutoPlay();
 update(0);
 
-const links = document.querySelectorAll('.nav-link');
+const links = document.querySelectorAll(".nav-link");
 
-links.forEach(link => {
-  link.addEventListener('click', function(e) {
+links.forEach((link) => {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
-    const targetId = this.getAttribute('href').slice(1);
+    const targetId = this.getAttribute("href").slice(1);
     const targetSection = document.getElementById(targetId);
 
     targetSection.scrollIntoView({
-      behavior: 'smooth'
+      behavior: "smooth",
     });
   });
 });

@@ -7,7 +7,7 @@
 
 @media (max-width: 640px) {
     h2 {
-        font-size: 1.8rem !important;
+        font-size: 1.8rem ;
     }
 
     .hero .info {
@@ -17,8 +17,12 @@
     }
 
     .hero .info h2 {
-        height: 35%;
-        font-size: 2rem;
+        height: 15%;
+        font-size: 1.3rem;
+    }
+
+    #contact {
+        height: 95vh;
     }
 
     body .background {
@@ -39,16 +43,11 @@
 
     .hero .info h2 {
         height: 15%;
-        font-size: 2.3rem;
+        font-size: 1.4rem;
     }
 
-    .morph-blob {
-        width: 70%;
-    }
-
-    .skills-bubbles {
-        width: 110%;
-        gap: 2.5rem 0rem;
+    #contact {
+        height: 120vh;
     }
 }
 
@@ -74,10 +73,6 @@
         height: 55%;
     }
 
-    .orbit-wrap {
-        width: 80%;
-    }
-
     .morph-blob {
         width: 50%;
     }
@@ -85,6 +80,47 @@
     #contact-form {
         width: 50%;
         padding: 2rem 2rem;
+    }
+
+    .header-wrapper {
+        padding: 2rem 5% 1rem 5% !important;
+    }
+
+    header .header-left {
+        gap: 3vw;
+    }
+
+
+    header .header-left .menu-btn {
+        display: none;
+    }
+
+    header nav {
+        display: block;
+        width: fit-content;
+    }
+
+    header nav ul {
+        display: flex;
+        gap: 3dvw;
+        list-style-type: none;
+    }
+
+    header nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: clamp(0.6rem, calc(0.6rem + 1dvw), 0.95rem);
+        font-weight: 900;
+        transition: color 0.2s;
+    }
+
+    header nav ul li:hover a {
+        color: #C084FF;
+    }
+
+    .nav2 {
+        opacity: 0 !important;
+        z-index: -1 !important;
     }
 
     p {
@@ -117,27 +153,10 @@
         max-width: 50%;
         height: 50%;
     }
-
-    #PFP {
-        left: 0;
-    }
-
-    .skills-bubbles {
-        width: 80%;
-        gap: 2.5rem 4rem;
-    }
-
-    .orbit-wrap {
-        width: 70%;
-    }
 }
 
 /* Desktops */
 @media (min-width: 1280px) {
-    .orbit-wrap {
-        width: 50%;
-    }
-
     .morph-blob {
         width: 30%;
     }
@@ -145,9 +164,12 @@
     .blob-icon {
         font-size: 7rem;
     }
+
     #contact {
         height: 100vh;
     }
+
+
 }
 
 /* Large screens */
@@ -156,5 +178,5 @@
         max-width: 50%;
         height: 60%;
     }
-    
+
 }

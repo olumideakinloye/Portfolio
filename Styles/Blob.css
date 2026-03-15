@@ -36,14 +36,17 @@
 .morph-blob {
     width: 60%;
     aspect-ratio: 1 / 1;
-    background: radial-gradient(circle at 38% 35%, #7c3aed, #1a0533 70%);
+    /* background: radial-gradient(circle at 38% 35%, #7c3aed, #1a0533 70%); */
     border-radius: 60% 40% 55% 45% / 50% 60% 40% 55%;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     gap: 8px;
-    box-shadow: 0 0 60px rgba(139, 92, 246, 0.5), inset 0 0 40px rgba(139, 92, 246, 0.15);
+    /* box-shadow:
+        0 0 60px rgba(139, 92, 246, 0.25),
+        0 20px 60px rgba(139, 92, 246, 0.15),
+        inset 0 0 40px rgba(139, 92, 246, 0.08); */
     animation: morph 6s ease-in-out infinite;
     cursor: pointer;
     position: relative;
@@ -143,6 +146,7 @@
     display: flex;
     gap: 7px;
     align-items: center;
+    /* width: 155px; */
 }
 
 .blob-dot {
@@ -220,4 +224,32 @@
 
 .autoplay-bar.paused {
     animation-play-state: paused;
+}
+
+.light-blob .blob-name {
+    color: #1a0533;
+}
+
+/* dark purple instead of white */
+.light-blob .blob-type {
+    color: #6d28d9;
+}
+
+/* mid purple instead of faded */
+.light-blob .blob-counter {
+    color: #8b5cf6;
+}
+
+.light-blob .morph-blob {
+    background: radial-gradient(circle at 38% 35%, #7c3aed, #f3e8ff 70%);
+    box-shadow: 0 0 60px rgba(139, 92, 246, 0.25), inset 0 0 40px rgba(139, 92, 246, 0.08);
+}
+
+.light-blob .autoplay-bar-wrap {
+    background: rgba(139, 92, 246, 0.12);
+}
+
+.light-blob .autoplay-bar {
+    background: linear-gradient(to right, #7c3aed, #c084fc);
+    box-shadow: 0 0 6px rgba(139, 92, 246, 0.4);
 }
